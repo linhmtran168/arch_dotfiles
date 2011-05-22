@@ -1,0 +1,1 @@
+/home/superlinh/dwm/config.h
