@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# Disable DPMS if on AC
+if [ `/bin/awk '{print $2}' /proc/acpi/ac_adapter/ADP1/state` = on-line ]; then
+	 XAUTHORITY=/home/superlinh/.Xauthority /usr/bin/xset -display :0.0 s off -dpms
+fi
+
+# Merge .Xresources
+xrdb -merge ~/.Xresources
+
+# Set wmname (for misbehaving java apps)
+wmname LG3D
+
+# Set screensaver and lockscreen
+numlockx &
+xscreensaver -no-splash &
+
+# Start urxvt daemon
+urxvtd -q -f -o
+
+# Spawn a terminal
+urxvtc &
+
+# Spawn autocutsel
+autocutsel -fork &
+
+# Start conky
+conky | while read -r; do xsetroot -name "$REPLY"; done &
+
+# Start dwm
+exec dwm
