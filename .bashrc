@@ -43,7 +43,7 @@ txtrst='\e[0m'    # Text Reset
 
 # Print prompt function
 print_prompt () {
-    printf "\n $bldcyn%s@%s: $txtgrn%s $txtpur%s\n $txtrst" "$USER" "$HOSTNAME" "$PWD" "$(vcprompt)"
+    printf "\n$bldcyn%s@%s: $txtgrn%s $txtpur%s\n$txtrst" "$USER" "$HOSTNAME" "$PWD" "$(vcprompt)"
 }
 
 alias ls='ls --color=auto'
@@ -58,6 +58,5 @@ export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 export PATH=$HOME/local/node/bin:$PATH
 export PATH="$HOME/Aptana Studio 3":$PATH
-export PATH=$HOME/shoes/dist:$PATH
 export PATH=$HOME/vcprompt:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
