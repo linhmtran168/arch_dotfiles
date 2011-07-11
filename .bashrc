@@ -1,8 +1,6 @@
 
 # Check for an interactive session
 [ -z "$PS1" ] && return
-# Start tmux when start a terminal
-[[ $TERM != "screen" ]] && tmux && exit
 
 # Colors
 txtblk='\e[0;30m' # Black - Regular  
