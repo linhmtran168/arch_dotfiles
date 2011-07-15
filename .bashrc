@@ -59,4 +59,6 @@ export QT_IM_MODULE=ibus
 export PATH=$HOME/local/node/bin:$PATH
 export PATH="$HOME/Aptana Studio 3":$PATH
 export PATH=$HOME/vcprompt:$PATH
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
