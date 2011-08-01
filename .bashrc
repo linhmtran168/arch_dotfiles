@@ -60,5 +60,6 @@ export PATH=$HOME/local/node/bin:$PATH
 export PATH="$HOME/Aptana Studio 3":$PATH
 export PATH=$HOME/vcprompt:$PATH
 export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
 source /usr/bin/virtualenvwrapper.sh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
