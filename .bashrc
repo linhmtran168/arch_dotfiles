@@ -56,6 +56,7 @@ PS1='$ '
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
+export EDITOR="vim"
 export PATH=$HOME/local/node/bin:$PATH
 export PATH="$HOME/Aptana Studio 3":$PATH
 export PATH=$HOME/vcprompt:$PATH
