@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Start from /usr/share/xsessions/dwm.desktop
+
 # Disable DPMS if on AC
 if [ `/bin/awk '{print $2}' /proc/acpi/ac_adapter/ADP1/state` = on-line ]; then
 	 XAUTHORITY=/home/superlinh/.Xauthority /usr/bin/xset -display :0.0 s off -dpms

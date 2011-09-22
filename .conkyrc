@@ -31,4 +31,4 @@ total_run_times 0
 use_spacer none
 
 TEXT
-CPU: ${color #0077ff}${color white}${cpu}%${color #0077ff} | FS: ${color lightgrey}${fs_used /}/${fs_size /}${color #0077ff} | /home: ${color lightgrey}${fs_used /home}/${fs_size /home}${color #0077ff} | RAM: ${color white}$mem ${color #0077ff} | D: ${color white}${downspeed eth0}${color #0077ff} | U: ${color white}${upspeed eth0} ${color #0077ff}| Bat: ${color white}${battery BAT0} ${battery_time BAT0} ${color #0077ff}| Vol: ${color white} ${exec amixer get Master | egrep -o "[0-9]+%" | head -1 | egrep -o "[0-9]*"}% | ${time %a %b %d %I:%M%P}
+CPU: ${color #0077ff}${color white}${cpu}%${color #0077ff} | FS: ${color lightgrey}${fs_used /}/${fs_size /}${color #0077ff} | /home: ${color lightgrey}${fs_used /home}/${fs_size /home}${color #0077ff} | RAM: ${color white}$mem${color #0077ff} | D: ${color white}${downspeed eth0}${color #0077ff} | U: ${color white}${upspeed eth0}${color #0077ff} | Bat: ${color white}${battery BAT0} ${battery_time BAT0}${color #0077ff} | Vol: ${color white} ${exec amixer get Master | egrep -o "[0-9]+%" | head -1 | egrep -o "[0-9]*"}% | ${time %a %b %d %I:%M%P}
