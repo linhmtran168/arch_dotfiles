@@ -73,9 +73,7 @@ mysupermenu = {
 }
 mymainmenu = awful.menu({ items = { { "super menu", mysupermenu, beautiful.awesome_icon },
                                     { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "terminal", terminal },
-                                    { "restart", "/sbin/shutdown -r now" },
-                                    { "shutdown", "/sbin/shutdown -h now" }
+                                    { "terminal", terminal }
                                   }
                         })
 
