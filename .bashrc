@@ -49,6 +49,7 @@ print_prompt () {
 alias ls='ls --color=auto'
 alias work='cd ~/D_Drive/Work/workspace'
 alias course='cd ~/D_Drive/Work/Courses'
+alias site='cd ~/D_Drive/Work/Sites'
 
 PROMPT_COMMAND=print_prompt
 PS1='$ '
@@ -58,7 +59,7 @@ export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 export EDITOR="vim"
 export PATH=$HOME/local/node/bin:$PATH
-export PATH="$HOME/Aptana Studio 3":$PATH
+export NODE_PATH=$HOME/local/node:/home/superlinh/local/node/lib/node_modules
 export PATH=$HOME/vcprompt:$PATH
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
