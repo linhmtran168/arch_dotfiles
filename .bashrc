@@ -2,7 +2,7 @@
 # Check for an interactive session
 [ -z "$PS1" ] && return
 
-# Colors
+# Shell Colors
 txtblk='\e[0;30m' # Black - Regular  
 txtred='\e[0;31m' # Red  
 txtgrn='\e[0;32m' # Green  
@@ -46,6 +46,7 @@ print_prompt () {
     printf "\n$bldcyn%s@%s: $txtgrn%s $txtpur%s\n$txtrst" "$USER" "$HOSTNAME" "$PWD" "$(vcprompt)"
 }
 
+# Directory Alias
 alias ls='ls --color=auto'
 alias work='cd ~/D_Drive/Work/workspace'
 alias course='cd ~/D_Drive/Work/Courses'
@@ -54,14 +55,61 @@ alias site='cd ~/D_Drive/Work/Sites'
 PROMPT_COMMAND=print_prompt
 PS1='$ '
 
+# Personal configuration
+export EDITOR="vim"
+export PATH=$HOME/vcprompt:$PATH
+
+# Python virtualenv configuration
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
+
+# Ibus configuration
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
-export EDITOR="vim"
-export PATH=$HOME/local/node/bin:$PATH
-export NODE_PATH=$HOME/local/node:/home/superlinh/local/node/lib/node_modules
-export PATH=$HOME/vcprompt:$PATH
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
-source /usr/bin/virtualenvwrapper.sh
+
+# Rvm loading
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+###-begin-npm-completion-###
+#
+# npm command completion script
+#
+# Installation: npm completion >> ~/.bashrc  (or ~/.zshrc)
+# Or, maybe: npm completion > /usr/local/etc/bash_completion.d/npm
+#
+
+COMP_WORDBREAKS=${COMP_WORDBREAKS/=/}
+COMP_WORDBREAKS=${COMP_WORDBREAKS/@/}
+export COMP_WORDBREAKS
+
+if complete &>/dev/null; then
+  _npm_completion () {
+    local si="$IFS"
+    IFS=$'\n' COMPREPLY=($(COMP_CWORD="$COMP_CWORD" \
+                           COMP_LINE="$COMP_LINE" \
+                           COMP_POINT="$COMP_POINT" \
+                           npm completion -- "${COMP_WORDS[@]}" \
+                           2>/dev/null)) || return $?
+    IFS="$si"
+  }
+  complete -F _npm_completion npm
+elif compctl &>/dev/null; then
+  _npm_completion () {
+    local cword line point words si
+    read -Ac words
+    read -cn cword
+    let cword-=1
+    read -l line
+    read -ln point
+    si="$IFS"
+    IFS=$'\n' reply=($(COMP_CWORD="$cword" \
+                       COMP_LINE="$line" \
+                       COMP_POINT="$point" \
+                       npm completion -- "${words[@]}" \
+                       2>/dev/null)) || return $?
+    IFS="$si"
+  }
+  compctl -K _npm_completion npm
+fi
+###-end-npm-completion-###
