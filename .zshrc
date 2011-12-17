@@ -24,7 +24,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(django python pip rails rails3 gem ruby rvm git git-flow github mecurial lein node npm gnu-utils gpg-agent ssh-agent archlinux redis-cli grails history-substring-search)
+plugins=(django python pip rails rails3 gem ruby rvm git git-flow github mecurial lein node npm gnu-utils gpg-agent archlinux redis-cli grails history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
