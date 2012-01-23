@@ -9,19 +9,13 @@ urxvt*background: rgba:1111/1111/1111/dddd
 
 URxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=13
 
-URxvt.keysym.C-Delete: perl:matcher:last
-URxvt.keysym.M-Delete: perl:matcher:list
+URxvt.perl-ext-common:  default,tabbed,keyboard-select,url-select,clipboard
 
-URxvt.perl-ext-common:  default,tabbed
-
-URxvt.perl-ext-common: ...,keyboard-select
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
 
-URxvt.per-ext-common: ...,url-select
 URxvt.keysym.M-u: perl:url-select:select_next
 
-URxvt.perl-ext-common: ...,clipboard
 URxvt.keysym.M-c: perl:clipboard:copy
 URxvt.keysym.M-v: perl:clipboard:paste
 URxvt.keysym.M-C-V: perl:clipboard:paste_escaped
