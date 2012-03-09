@@ -11,7 +11,7 @@ require("vicious")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/usr/share/awesome/themes/bamboo/theme.lua")
+beautiful.init("/usr/share/awesome/themes/wombat/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
@@ -23,7 +23,7 @@ editor_cmd = terminal .. " -e " .. editor
 -- If you do not like this or do not have such a key,
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
 -- However, you can use another modifier like Mod1, but it may interact with others.
-modkey = "Mod4"
+modkey = "Mod1"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
@@ -46,8 +46,8 @@ layouts =
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {
-    names = { "main", "console", "www", "gimp", "office", "im", "reader", "music", "others"},
-    layout = { layouts[2], layouts[2], layouts[1], layouts[5], layouts[6], layouts[12], layouts[9], layouts[3], layouts[7]}
+    names = { "main", "console", "www", "reader", "music", "gimp", "office", "im", "others"},
+    layout = { layouts[2], layouts[2], layouts[1], layouts[9], layouts[3], layouts[5], layouts[6], layouts[12], layouts[7]}
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
@@ -87,7 +87,7 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- Initialize widget
 netwidget = widget({ type = "textbox" })
 -- Register widget
-vicious.register(netwidget, vicious.widgets.net, "<span foreground='#ddda9b'>Net: <span foreground='white'>${eth0 down_kb}</span> <span foreground='white'>${eth0 up_kb}</span></span>", 3)
+vicious.register(netwidget, vicious.widgets.net, "<span foreground='#ddda9b'>Net: <span foreground='white'>${eth0 down_kb}</span> - <span foreground='white'>${eth0 up_kb}</span></span>", 3)
 -- }}}
 
 -- Create a separator widget
@@ -136,22 +136,7 @@ vicious.register(homefswidget, vicious.widgets.fs, "<span foreground='#ddda9b'>H
 
 -- {{{ Volume widget
 --volwidget = widget({ type = "textbox" })
---	vicious.register(volwidget, vicious.widgets.volume,
---		function (widget, args)
---			if args[1] == 0 or args[2] == "♩" then
---				return "" .. colblk .. "vol " .. coldef .. colbwhite .. "mute" .. coldef .. "" 
---			else
---				return "" .. colblk .. "vol " .. coldef .. colbblk .. args[1] .. "% " .. coldef .. ""
---			end
---		end, 2, "Master" )
---	volwidget:buttons(
---		awful.util.table.join(
---			awful.button({ }, 1, function () awful.util.spawn("amixer -q sset Master toggle")   end),
---			awful.button({ }, 3, function () awful.util.spawn( terminal .. " -e alsamixer")   end),
---			awful.button({ }, 4, function () awful.util.spawn("amixer -q sset Master 2dB+") end),
---			awful.button({ }, 5, function () awful.util.spawn("amixer -q sset Master 2dB-") end)
---		)
---	)
+--vicious.register(volwidget, vicious.widgets.volume, " $1%", 2, "PCM")
 -- }}}
 
 -- Create a systray
