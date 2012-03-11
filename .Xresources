@@ -9,7 +9,7 @@ urxvt*background: rgba:1111/1111/1111/dddd
 URxvt.cursorBlink:true
 URxvt.pointerBlank:true
 
-URxvt*font: xft:Monospace:pixelsize=14
+URxvt*font: xft:DejaVu Sans Mono:pixelsize=12
 
 URxvt.perl-ext-common:  default,tabbed,keyboard-select,url-select,clipboard
 
@@ -25,7 +25,7 @@ URxvt.keysym.M-C-V: perl:clipboard:paste_escaped
 ! xterm ----------------------------------------------------------------------
 
 xterm*geometry:           80x25
-xterm*faceName:           xft:Bitstream Vera Sans Mono:pixelsize=13
+xterm*faceName:           xft:DejaVu Sans Mono:pixelsize=12
 !xterm*font:             -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
 xterm*dynamicColors:      true
 xterm*background:         black
